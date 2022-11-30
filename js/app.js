@@ -64,6 +64,11 @@ function init() {
 }
 
 function resetBoard(evt) {
+  let tempImgs = document.querySelectorAll('#temp')
+
+  tempImgs.forEach(img => {
+    img.remove()
+  })
   init()
 }
 
@@ -98,8 +103,10 @@ function boardChange(idx) {
   for (let i = 0; i < squares.length; i++) {
     if (board[i] === 1) {
       squares[i].style.backgroundColor = "#ffb5a4"
+      squares[i].innerHTML = '<img id="temp" src="./assets/cupcake.png">'
     } else if (board[i] === -1) {
       squares[i].style.backgroundColor = "#ffd5a4"
+      squares[i].innerHTML = '<img id="temp" src="./assets/ice-cream.png">'
     } else {
       squares[i].style.backgroundColor = "#fcf2e9"
     }
