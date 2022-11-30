@@ -34,7 +34,7 @@ const winningCombos = [
 
 /*---------------------------- Variables (state) ----------------------------*/
 
-let board, turn, winner
+let board, turn, winner, winningComboIdx
 
 /*------------------------ Cached Element References ------------------------*/
 
@@ -42,9 +42,13 @@ const squareEls = document.querySelector('.board')
 
 const messageEl = document.querySelector('#message')
 
+const resetButton = document.querySelector('button')
+
 console.log('board and message', squareEls, messageEl)
 /*----------------------------- Event Listeners -----------------------------*/
 
+squareEls.addEventListener('click', handleClick)
+resetButton.addEventListener('click', resetBoard)
 
 
 /*-------------------------------- Functions --------------------------------*/
@@ -55,13 +59,84 @@ function init() {
   board = [null, null, null, null, null, null, null, null, null]
   turn = 1
   winner = null
+  resetButton.setAttribute('hidden', true)
   render()
 }
 
+function resetBoard(evt) {
+  init()
+}
 
-function render() {
-  // if (board.includes(1) || board.includes(-1)) {
-  //   resetButton.removeAttribute('hidden')
-  // }
 
+function render(idx) {
+  if (board.includes(1) || board.includes(-1)) {
+    resetButton.removeAttribute('hidden')
+  }
+  boardChange(idx)
+  winnerMsg()
+}
+
+function handleClick(evt) {
+  let squareIndex = Number((evt.target.id).charAt(2))
+  console.log(squareIndex, board)
+
+  if (board[squareIndex] !== null) {
+    messageEl.textContent = 'Please select an empty space'
+    return
+  }
+
+  board[squareIndex] = turn
+  turn = turn * -1
+
+  render(squareIndex)
+}
+
+function boardChange(idx) {
+  let squares = squareEls.children
+
+  for (let i = 0; i < squares.length; i++) {
+    if (board[i] === 1) {
+      squares[i].style.backgroundColor = "#EEF9FA"
+    } else if (board[i] === -1) {
+      squares[i].style.backgroundColor = "#C8F1E8"
+    } else {
+      squares[i].style.backgroundColor = "#BFC8C5"
+    }
+  }
+}
+
+function winnerMsg() {
+  if (winner === null) {
+    if (turn === 1) {
+      messageEl.textContent = `You're up, Player ${turn}!`
+    } else if (turn === -1) {
+      messageEl.textContent = `You're up, Player 2`
+    }
+  } else if (winner !== null && winner !== 'T') {
+    if (winner === -1) {
+      messageEl.textContent = 'Player 2 wins!'
+    } else {
+      messageEl.textContent = `Player ${winner} wins!`
+    }
+  } else if (winner === 'T') {
+    messageEl.textContent = "It's a tie!"
+  }
+}
+
+function getWinner() {
+  winningCombos.forEach((combo) => {
+    let sum = []
+    for (let i = 0; i < combo.length; i++) {
+      sum.push(board[combo[i]])
+      console.log(sum)
+    }
+    let reduceSum = Math.abs(sum.reduce((a, b) => a + b, 0))
+    if (reduceSum === 3) {
+      winner = sum[0]
+      winningCombosIdx = winningCombos.indexOf(combo)
+    }
+  })
+  if (winner === null && board.includes(null) === false) {
+    winner = 'T'
+  }
 }
