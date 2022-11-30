@@ -90,6 +90,10 @@ function handleClick(evt) {
     return
   }
 
+  if (winner !== null) {
+    return
+  }
+
   board[squareIndex] = turn
   turn = turn * -1
 
