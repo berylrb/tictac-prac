@@ -59,7 +59,7 @@ function init() {
   board = [null, null, null, null, null, null, null, null, null]
   turn = 1
   winner = null
-  resetButton.setAttribute('hidden', true)
+  resetButton.style.visibility = 'hidden'
   render()
 }
 
@@ -70,7 +70,7 @@ function resetBoard(evt) {
 
 function render(idx) {
   if (board.includes(1) || board.includes(-1)) {
-    resetButton.removeAttribute('hidden')
+    resetButton.style.visibility = 'visible'
   }
   boardChange(idx)
   winnerMsg()
@@ -88,6 +88,7 @@ function handleClick(evt) {
   board[squareIndex] = turn
   turn = turn * -1
 
+  getWinner()
   render(squareIndex)
 }
 
@@ -96,11 +97,11 @@ function boardChange(idx) {
 
   for (let i = 0; i < squares.length; i++) {
     if (board[i] === 1) {
-      squares[i].style.backgroundColor = "#EEF9FA"
+      squares[i].style.backgroundColor = "#ffb5a4"
     } else if (board[i] === -1) {
-      squares[i].style.backgroundColor = "#C8F1E8"
+      squares[i].style.backgroundColor = "#ffd5a4"
     } else {
-      squares[i].style.backgroundColor = "#BFC8C5"
+      squares[i].style.backgroundColor = "#fcf2e9"
     }
   }
 }
@@ -128,12 +129,11 @@ function getWinner() {
     let sum = []
     for (let i = 0; i < combo.length; i++) {
       sum.push(board[combo[i]])
-      console.log(sum)
     }
     let reduceSum = Math.abs(sum.reduce((a, b) => a + b, 0))
     if (reduceSum === 3) {
       winner = sum[0]
-      winningCombosIdx = winningCombos.indexOf(combo)
+      winningComboIdx = winningCombos.indexOf(combo)
     }
   })
   if (winner === null && board.includes(null) === false) {
