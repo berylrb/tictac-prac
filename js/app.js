@@ -106,13 +106,14 @@ function boardChange(idx) {
 
   for (let i = 0; i < squares.length; i++) {
     if (board[i] === 1) {
-      squares[i].style.backgroundColor = "#ffb5a4"
+      squares[i].style.backgroundColor = "#ffb5c0"
       squares[i].innerHTML = '<img id="temp" src="./assets/cupcake.png">'
     } else if (board[i] === -1) {
-      squares[i].style.backgroundColor = "#ffd5a4"
+      squares[i].style.backgroundColor = "#8dd6fe"
       squares[i].innerHTML = '<img id="temp" src="./assets/ice-cream.png">'
+    
     } else {
-      squares[i].style.backgroundColor = "#fcf2e9"
+      squares[i].style.backgroundColor = "#fff"
     }
   }
 }
