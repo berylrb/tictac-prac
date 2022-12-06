@@ -42,9 +42,10 @@ const squareEls = document.querySelector('.board')
 
 const messageEl = document.querySelector('#message')
 
+const messageDiv = document.querySelector('.message-div')
+
 const resetButton = document.querySelector('button')
 
-console.log('board and message', squareEls, messageEl)
 /*----------------------------- Event Listeners -----------------------------*/
 
 squareEls.addEventListener('click', handleClick)
@@ -60,6 +61,7 @@ function init() {
   turn = 1
   winner = null
   resetButton.style.visibility = 'hidden'
+  messageDiv.classList.add("message-div-styling")
   render()
 }
 
@@ -69,6 +71,7 @@ function resetBoard(evt) {
   tempImgs.forEach(img => {
     img.remove()
   })
+  messageDiv.classList.add("message-div-styling")
   init()
 }
 
@@ -103,15 +106,20 @@ function handleClick(evt) {
 
 function boardChange(idx) {
   let squares = squareEls.children
-
+  if (turn === 1 && winner === null) {
+    messageDiv.style.backgroundColor = "#ffb5c0"
+  } else if (turn === -1 && winner === null){
+    messageDiv.style.backgroundColor = "#8dd6fe"
+  }
   for (let i = 0; i < squares.length; i++) {
     if (board[i] === 1) {
       squares[i].style.backgroundColor = "#ffb5c0"
       squares[i].innerHTML = '<img id="temp" src="./assets/cupcake.png">'
+      
     } else if (board[i] === -1) {
       squares[i].style.backgroundColor = "#8dd6fe"
       squares[i].innerHTML = '<img id="temp" src="./assets/ice-cream.png">'
-    
+      
     } else {
       squares[i].style.backgroundColor = "#fff"
     }
@@ -128,8 +136,10 @@ function winnerMsg() {
   } else if (winner !== null && winner !== 'T') {
     if (winner === -1) {
       messageEl.textContent = 'Player 2 wins!'
+      messageDiv.style.backgroundColor = "#8dd6fe"
     } else {
       messageEl.textContent = `Player ${winner} wins!`
+      messageDiv.style.backgroundColor = "#ffb5c0"
     }
   } else if (winner === 'T') {
     messageEl.textContent = "It's a tie!"
