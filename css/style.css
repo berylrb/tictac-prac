@@ -4,18 +4,17 @@ body {
 background-color: #b9e7ff;
 background-image: url("/assets/sprinkles2.png");
 background-size: cover;
-/* Use a system font, if none are available use an available sans-sarif   font */
-font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-  Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 margin: 0;
 height: 100vh;
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+font-family: 'Chewy', cursive;
+letter-spacing: .1rem;
 }
 
-body > h1 {
+h1 {
   /* font-family: 'Titan One', cursive; */
   font-family: 'Modak', cursive;
   font-size: 6em;
@@ -25,6 +24,10 @@ body > h1 {
   -webkit-text-stroke-color: black;
 }
 
+
+h2 {
+  font-size: 36px;
+}
 
 section.board {
 display: grid;
@@ -48,9 +51,6 @@ justify-content: center;
 background-color: #ffffff;
 }
 
-/* .board > div:hover {
-  background-color: #fdeac39d;
-} */
 
 div img {
   object-fit: cover;
@@ -69,12 +69,12 @@ button {
   color: black;
   cursor: pointer;
   display: inline-flex;
-  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 16px;
-  font-weight: 600;
+  font-family: 'Chewy', cursive;
+  font-size: 22px;
+  letter-spacing: .1rem;
   justify-content: center;
   line-height: 1.25;
-  margin: 25px 0 0 0;
+  margin: 50px 0 0 0;
   min-height: 4rem;
   padding: calc(.875rem - 1px) calc(1.5rem - 1px);
   position: relative;
