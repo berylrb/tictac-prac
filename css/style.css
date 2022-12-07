@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Bowlby+One&family=Chewy&family=Delius+Unicase:wght@700&family=Emilys+Candy&family=Lilita+One&family=Modak&display=swap');
 
 body {
-  background-color: #b9e7ff;
+  background-color: #ffd99f;
   background-image: url("/assets/sprinkles2.png");
   background-size: cover;
   margin: 0;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   font-family: 'Delius Unicase', cursive;
   /* letter-spacing: .1rem; */
@@ -18,7 +18,7 @@ h1 {
   /* font-family: 'Titan One', cursive; */
   font-family: 'Modak', cursive;
   font-size: 4.8em;
-  margin: 0;
+  margin: 80px 0 0 0;
   color: white;
   -webkit-text-stroke-width: .4px;
   -webkit-text-stroke-color: black;
@@ -74,7 +74,7 @@ div img {
 .text-button {
   align-items: center;
   /* background-clip: padding-box; */
-  background-color: #f9a1ae;
+  background-color: #ffb5c0;
   border-radius: .25rem;
   /* box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0; */
   box-sizing: border-box;
@@ -120,7 +120,7 @@ div img {
 @media only screen and (min-width: 768px) {
 
   body {
-    background-color: #b9e7ff;
+    background-color: #ffd99f;
     background-image: url("/assets/sprinkles2.png");
     background-size: cover;
     margin: 0;
@@ -181,7 +181,7 @@ div img {
   .text-button {
     align-items: center;
     /* background-clip: padding-box; */
-    background-color: #f9a1ae;
+    background-color: #ffb5c0;
     border-radius: .25rem;
     /* box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0; */
     box-sizing: border-box;
