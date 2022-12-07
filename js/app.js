@@ -62,6 +62,7 @@ const winAudio = new Audio("./assets/win-sound2.wav")
 const turnAudio = new Audio("./assets/spot-click2.wav")
 const errAudio = new Audio("./assets/wrong.wav")
 const tieAudio = new Audio("./assets/tie1.wav")
+const resetAudio = new Audio("./assets/reset-noise.wav")
 
 /*----------------------------- Event Listeners -----------------------------*/
 
@@ -139,6 +140,7 @@ function resetBoard(evt) {
   tempImgs.forEach(img => {
     img.remove()
   })
+  resetAudio.play()
   messageDiv.classList.add("message-div-styling")
   init()
 }
