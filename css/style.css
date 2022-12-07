@@ -137,7 +137,7 @@ div img {
   h1 {
     /* font-family: 'Titan One', cursive; */
     font-family: 'Modak', cursive;
-    font-size: 4em;
+    font-size: 6em;
     margin: 0;
     color: white;
     -webkit-text-stroke-width: .4px;
@@ -151,8 +151,8 @@ div img {
   
   section.board {
     display: grid;
-    grid-template-rows: repeat(3, 19vmin);
-    grid-template-columns: repeat(3, 19vmin);
+    grid-template-rows: repeat(3, 15vmin);
+    grid-template-columns: repeat(3, 15vmin);
     grid-gap: 0vmin;
     border: 1.5px solid black;
     border-radius: .25rem;
@@ -170,6 +170,16 @@ div img {
     justify-content: center;
     background-color: #ffffff;
   }
+
+  .message-div-styling {
+    display: flex;
+    justify-content: center;
+    background-color: #ffb5c0;
+    width: 45.5vmin;
+    margin: 0 0 38px 0;
+    border-radius: .25rem;
+    border: 2.5px solid black;
+  }
   
   
   div img {
@@ -181,17 +191,14 @@ div img {
 
   .text-button {
     align-items: center;
-    /* background-clip: padding-box; */
     background-color: #ffb5c0;
     border-radius: .25rem;
-    /* box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0; */
     box-sizing: border-box;
     color: black;
     cursor: pointer;
     display: inline-flex;
     font-family: 'Delius Unicase', cursive;
-    font-size: 24px;
-    /* letter-spacing: .1rem; */
+    font-size: 1.2em;
     justify-content: center;
     line-height: 1.25;
     margin: 35px 0 0 0;
@@ -204,7 +211,7 @@ div img {
     -webkit-user-select: none;
     touch-action: manipulation;
     vertical-align: baseline;
-    width: 57.5vmin;
+    width: 45.5vmin;
     border: 2.5px solid black;
   }
   

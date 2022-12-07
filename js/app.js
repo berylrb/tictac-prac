@@ -40,7 +40,7 @@ let board, turn, winner, winningComboIdx
 // confetti stuff -------
 
 const colors1 = ['#FAA1AE', '#E29376']
-const colors2 = ['#8ED6FE', '#7BFAC1']
+const colors2 = ['#89BAF0', '#7BFAC1']
 
 const duration = 5 * 1000;
 const end = Date.now() + duration;
@@ -61,6 +61,7 @@ const resetButton = document.querySelector('button')
 const winAudio = new Audio("./assets/win-sound2.wav")
 const turnAudio = new Audio("./assets/spot-click2.wav")
 const errAudio = new Audio("./assets/wrong.wav")
+const tieAudio = new Audio("./assets/tie1.wav")
 
 /*----------------------------- Event Listeners -----------------------------*/
 
@@ -72,45 +73,51 @@ resetButton.addEventListener('click', resetBoard)
 // if player 1 wins
 function frame1() {
   confetti({
-    particleCount: 3,
+    particleCount: 12,
     angle: 60,
-    spread: 55,
+    spread: 205,
     origin: { x: 0 },
     colors: colors1,
+    startVelocity: 60
   });
   confetti({
-    particleCount: 3,
+    particleCount: 12,
     angle: 120,
-    spread: 55,
+    spread: 205,
     origin: { x: 1 },
     colors: colors1,
+    startVelocity: 60
   });
 
   if (Date.now() < end) {
     requestAnimationFrame(frame1);
-  }
+  } 
+
 }
 
 //if player 2 wins
 function frame2() {
   confetti({
-    particleCount: 3,
+    particleCount: 12,
     angle: 60,
-    spread: 55,
+    spread: 205,
     origin: { x: 0 },
     colors: colors2,
+    startVelocity: 60
   });
   confetti({
-    particleCount: 3,
+    particleCount: 12,
     angle: 120,
-    spread: 55,
+    spread: 205,
     origin: { x: 1 },
     colors: colors2,
+    startVelocity: 60
   });
 
   if (Date.now() < end) {
     requestAnimationFrame(frame2);
   }
+
 }
 
 // from https://codepen.io/kimdontdoit/pen/wvdKLJo & https://www.skypack.dev/view/canvas-confetti 
@@ -124,6 +131,7 @@ function init() {
   resetButton.style.visibility = 'hidden'
   messageDiv.classList.add("message-div-styling")
   render()
+  confetti.reset()
 }
 
 function resetBoard(evt) {
@@ -152,6 +160,7 @@ function handleClick(evt) {
   if (board[squareIndex] !== null) {
     messageEl.textContent = 'Select an empty space'
     errAudio.play()
+    messageDiv.style.backgroundColor = '#faae2b'
     return
   }
 
@@ -211,6 +220,8 @@ function winnerMsg() {
     }
   } else if (winner === 'T') {
     messageEl.textContent = "It's a tie!"
+    messageDiv.style.backgroundColor = '#faae2b'
+    tieAudio.play()
   }
 }
 
