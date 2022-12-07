@@ -1,4 +1,7 @@
 # Tic-Tac-Toe Practice
 
-Additional practice of TTT to solidify concepts in order to better guide students in their own JS game projects. 
+A cute lil' cupcake themed tic tac toe game. 
+
+
+<a href="https://www.flaticon.com/" title="snow ball icons">icons from Flaticon</a>
 
