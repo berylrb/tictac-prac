@@ -1,23 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Bowlby+One&family=Chewy&family=Delius+Unicase:wght@700&family=Emilys+Candy&family=Lilita+One&family=Modak&display=swap');
 
 body {
-background-color: #b9e7ff;
-background-image: url("/assets/sprinkles2.png");
-background-size: cover;
-margin: 0;
-height: 100vh;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-font-family: 'Delius Unicase', cursive;
-/* letter-spacing: .1rem; */
+  background-color: #b9e7ff;
+  background-image: url("/assets/sprinkles2.png");
+  background-size: cover;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Delius Unicase', cursive;
+  /* letter-spacing: .1rem; */
 }
 
 h1 {
   /* font-family: 'Titan One', cursive; */
   font-family: 'Modak', cursive;
-  font-size: 6em;
+  font-size: 4.8em;
   margin: 0;
   color: white;
   -webkit-text-stroke-width: .4px;
@@ -26,40 +26,52 @@ h1 {
 
 
 h2 {
-  font-size: 25px;
+  font-size: 1.2em;
+  padding: 1px;
 }
 
 section.board {
-display: grid;
-grid-template-rows: repeat(3, 19vmin);
-grid-template-columns: repeat(3, 19vmin);
-grid-gap: 0vmin;
-border: 2.5px solid black;
-border-radius: .25rem;
+  display: grid;
+  grid-template-rows: repeat(3, 25vmin);
+  grid-template-columns: repeat(3, 25vmin);
+  grid-gap: 0vmin;
+  border: 1.5px solid black;
+  border-radius: .25rem;
 
 }
 
-.board > div {
-border: 2.5px solid black;
-font-size: 8vmin;
-text-align: center;
-vertical-align: middle;
-object-fit: contain;
-display: flex;
-align-items: center;
-justify-content: center;
-background-color: #ffffff;
+.board>div {
+  border: 1.5px solid black;
+  font-size: 8vmin;
+  text-align: center;
+  vertical-align: middle;
+  object-fit: contain;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
 }
 
 
 div img {
   object-fit: cover;
   width: 60%;
-  
+
 }
 
 
-button {
+.message-div-styling {
+  display: flex;
+  justify-content: center;
+  background-color: #ffb5c0;
+  width: 74.5vmin;
+  margin: 0 0 38px 0;
+  border-radius: .25rem;
+  border: 2.5px solid black;
+}
+
+
+.text-button {
   align-items: center;
   /* background-clip: padding-box; */
   background-color: #f9a1ae;
@@ -70,7 +82,7 @@ button {
   cursor: pointer;
   display: inline-flex;
   font-family: 'Delius Unicase', cursive;
-  font-size: 24px;
+  font-size: 1.2em;
   /* letter-spacing: .1rem; */
   justify-content: center;
   line-height: 1.25;
@@ -84,32 +96,132 @@ button {
   -webkit-user-select: none;
   touch-action: manipulation;
   vertical-align: baseline;
-  width: 57.5vmin;
+  width: 74.5vmin;
   border: 2.5px solid black;
 }
 
-button:hover,
-button:focus {
+.text-button:hover,
+.text-button:focus {
   background-color: #93d7fb;
   box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
 }
 
-button:hover {
+.text-button:hover {
   transform: translateY(-1px);
 }
 
-button:active {
+.text-button:active {
   background-color: #7ab9da;
   box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
   transform: translateY(0);
 }
 
-.message-div-styling {
-  display: flex;
-  justify-content: center;
-  background-color: #ffb5c0;
-  width: 57.5vmin;
-  margin: 0 0 25px 0;
-  border-radius: .25rem;
-  border: 2.5px solid black;
+
+@media only screen and (min-width: 768px) {
+
+  body {
+    background-color: #b9e7ff;
+    background-image: url("/assets/sprinkles2.png");
+    background-size: cover;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Delius Unicase', cursive;
+    /* letter-spacing: .1rem; */
+  }
+  
+  h1 {
+    /* font-family: 'Titan One', cursive; */
+    font-family: 'Modak', cursive;
+    font-size: 4em;
+    margin: 0;
+    color: white;
+    -webkit-text-stroke-width: .4px;
+    -webkit-text-stroke-color: black;
+  }
+  
+  
+  h2 {
+    font-size: 1.1em;
+  }
+  
+  section.board {
+    display: grid;
+    grid-template-rows: repeat(3, 19vmin);
+    grid-template-columns: repeat(3, 19vmin);
+    grid-gap: 0vmin;
+    border: 1.5px solid black;
+    border-radius: .25rem;
+  
+  }
+  
+  .board>div {
+    border: 1.5px solid black;
+    font-size: 8vmin;
+    text-align: center;
+    vertical-align: middle;
+    object-fit: contain;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+  }
+  
+  
+  div img {
+    object-fit: cover;
+    width: 60%;
+  
+  }
+
+
+  .text-button {
+    align-items: center;
+    /* background-clip: padding-box; */
+    background-color: #f9a1ae;
+    border-radius: .25rem;
+    /* box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0; */
+    box-sizing: border-box;
+    color: black;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: 'Delius Unicase', cursive;
+    font-size: 24px;
+    /* letter-spacing: .1rem; */
+    justify-content: center;
+    line-height: 1.25;
+    margin: 35px 0 0 0;
+    min-height: 4rem;
+    padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+    position: relative;
+    text-decoration: none;
+    transition: all 250ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    width: 57.5vmin;
+    border: 2.5px solid black;
+  }
+  
+  .text-button:hover,
+  .text-button:focus {
+    background-color: #93d7fb;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  }
+  
+  .text-button:hover {
+    transform: translateY(-1px);
+  }
+  
+  .text-button:active {
+    background-color: #7ab9da;
+    box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+    transform: translateY(0);
+  }
+  
+  
 }
