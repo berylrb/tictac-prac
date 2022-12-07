@@ -131,7 +131,6 @@ function init() {
   resetButton.style.visibility = 'hidden'
   messageDiv.classList.add("message-div-styling")
   render()
-  confetti.reset()
 }
 
 function resetBoard(evt) {
