@@ -46,6 +46,10 @@ const messageDiv = document.querySelector('.message-div')
 
 const resetButton = document.querySelector('button')
 
+const winAudio = new Audio("./assets/win-sound1.wav")
+
+const turnAudio = new Audio("./assets/spot-click2.wav")
+
 /*----------------------------- Event Listeners -----------------------------*/
 
 squareEls.addEventListener('click', handleClick)
@@ -115,10 +119,12 @@ function boardChange(idx) {
     if (board[i] === 1) {
       squares[i].style.backgroundColor = "#ffb5c0"
       squares[i].innerHTML = '<img id="temp" src="./assets/cupcake.png">'
+      turnAudio.play()
       
     } else if (board[i] === -1) {
       squares[i].style.backgroundColor = "#8dd6fe"
       squares[i].innerHTML = '<img id="temp" src="./assets/ice-cream.png">'
+      turnAudio.play()
       
     } else {
       squares[i].style.backgroundColor = "#fff"
@@ -137,9 +143,11 @@ function winnerMsg() {
     if (winner === -1) {
       messageEl.textContent = 'Player 2 wins!'
       messageDiv.style.backgroundColor = "#8dd6fe"
+      winAudio.play()
     } else {
       messageEl.textContent = `Player ${winner} wins!`
       messageDiv.style.backgroundColor = "#ffb5c0"
+      winAudio.play()
     }
   } else if (winner === 'T') {
     messageEl.textContent = "It's a tie!"
