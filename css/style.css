@@ -37,8 +37,7 @@ section.board {
   grid-template-columns: repeat(3, 25vmin);
   grid-gap: 0vmin;
   border: 1.5px solid black;
-  border-radius: .25rem;
-
+  border-radius: 25px;
 }
 
 .board>div {
@@ -53,6 +52,21 @@ section.board {
   background-color: #ffffff;
 }
 
+#sq0 {
+  border-radius: 25px 0 0 0;
+}
+
+#sq2 {
+  border-radius: 0 25px 0 0;
+}
+
+#sq6 {
+  border-radius: 0 0 0 25px;
+}
+
+#sq8 {
+  border-radius: 0 0 25px 0;
+}
 
 div img {
   object-fit: cover;
