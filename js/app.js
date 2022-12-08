@@ -53,7 +53,8 @@ const messageEl = document.querySelector('#message')
 
 const messageDiv = document.querySelector('.message-div')
 
-const resetButton = document.querySelector('button')
+const resetButton = document.querySelector('.text-button')
+const resetButton2 = document.querySelector('.pic-button')
 
 
 // audio -----------
@@ -68,7 +69,7 @@ const resetAudio = new Audio("./assets/reset-noise.wav")
 
 squareEls.addEventListener('click', handleClick)
 resetButton.addEventListener('click', resetBoard)
-
+resetButton2.addEventListener('click', resetBoard)
 
 /*-------------------------------- Functions --------------------------------*/
 // if player 1 wins
