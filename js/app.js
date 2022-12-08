@@ -32,6 +32,36 @@ const winningCombos = [
   [2, 5, 8]
 ]
 
+// shake animation constants -- 
+
+const shake = [
+  { transform: 'translate(0, 0) rotate(0deg)' },
+  { transform: 'translate(3px, 3px) rotate(3deg)' },
+  { transform: 'translate(0, 0) rotate(0eg)' },
+  { transform: 'translate(-3px, 3px) rotate(-3deg)' },
+  { transform: 'translate(0, 0) rotate(0deg) '}
+]
+
+const shakeTiming = {
+  duration: 200,
+  iterations: 1,
+}
+
+
+// bounce animation constants -- 
+const bounce = [
+  { transform: 'translateY(0)'},
+  { transform: 'translateY(-5px)'}
+]
+
+const bounceWin = [
+  { transform: 'translateY(0)'},
+  { transform: 'translateY(-3px)'},
+  { transform: 'translateY(0)'},
+  { transform: 'translateY(-3px)'}
+]
+
+
 /*---------------------------- Variables (state) ----------------------------*/
 
 let board, turn, winner, winningComboIdx
@@ -162,6 +192,7 @@ function handleClick(evt) {
   if (board[squareIndex] !== null) {
     messageEl.textContent = 'Select an empty space'
     errAudio.play()
+    messageDiv.animate(shake, shakeTiming)
     messageDiv.style.backgroundColor = '#faae2b'
     return
   }
@@ -206,17 +237,21 @@ function winnerMsg() {
   if (winner === null) {
     if (turn === 1) {
       messageEl.textContent = `You're up, Player ${turn}!`
+      messageDiv.animate(bounce, shakeTiming)
     } else if (turn === -1) {
       messageEl.textContent = `You're up, Player 2`
+      messageDiv.animate(bounce, shakeTiming)
     }
   } else if (winner !== null && winner !== 'T') {
     if (winner === -1) {
       messageEl.textContent = 'Player 2 wins!'
+      messageDiv.animate(bounceWin, shakeTiming)
       messageDiv.style.backgroundColor = "#8dd6fe"
       winAudio.play()
       frame2()
     } else {
       messageEl.textContent = `Player ${winner} wins!`
+      messageDiv.animate(bounceWin, shakeTiming)
       messageDiv.style.backgroundColor = "#ffb5c0"
       winAudio.play()
       frame1()
