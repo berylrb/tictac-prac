@@ -105,32 +105,36 @@ resetButton2.addEventListener('click', resetBoard)
 // if player 1 wins
 function frame1() {
   confetti({
-    particleCount: 12,
+    particleCount: 103,
     angle: 60,
-    spread: 205,
+    spread: 225,
     origin: { x: 0 },
     colors: colors1,
     startVelocity: 60
   });
   confetti({
-    particleCount: 12,
+    particleCount: 103,
     angle: 120,
-    spread: 205,
+    spread: 225,
     origin: { x: 1 },
     colors: colors1,
     startVelocity: 60
   });
+}
 
-  if (Date.now() < end) {
-    requestAnimationFrame(frame1);
-  } 
-
+function callFrame1() {
+  setTimeout(frame1, 0)
+  setTimeout(frame1, 100)
+  setTimeout(frame1, 200)
+  setTimeout(frame1, 300)
+  setTimeout(frame1, 400)
+  setTimeout(frame1, 600)
 }
 
 //if player 2 wins
 function frame2() {
   confetti({
-    particleCount: 12,
+    particleCount: 103,
     angle: 60,
     spread: 205,
     origin: { x: 0 },
@@ -138,20 +142,23 @@ function frame2() {
     startVelocity: 60
   });
   confetti({
-    particleCount: 12,
+    particleCount: 103,
     angle: 120,
     spread: 205,
     origin: { x: 1 },
     colors: colors2,
     startVelocity: 60
   });
-
-  if (Date.now() < end) {
-    requestAnimationFrame(frame2);
-  }
-
 }
 
+function callFrame2() {
+  setTimeout(frame2, 0)
+  setTimeout(frame2, 100)
+  setTimeout(frame2, 200)
+  setTimeout(frame2, 300)
+  setTimeout(frame2, 400)
+  setTimeout(frame2, 600)
+}
 // from https://codepen.io/kimdontdoit/pen/wvdKLJo & https://www.skypack.dev/view/canvas-confetti 
 
 init()
@@ -248,13 +255,13 @@ function winnerMsg() {
       messageDiv.animate(bounceWin, shakeTiming)
       messageDiv.style.backgroundColor = "#8dd6fe"
       winAudio.play()
-      frame2()
+      callFrame2()
     } else {
       messageEl.textContent = `Player ${winner} wins!`
       messageDiv.animate(bounceWin, shakeTiming)
       messageDiv.style.backgroundColor = "#ffb5c0"
       winAudio.play()
-      frame1()
+      callFrame1()
     }
   } else if (winner === 'T') {
     messageEl.textContent = "It's a tie!"
