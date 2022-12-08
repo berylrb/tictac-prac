@@ -194,7 +194,8 @@ function boardChange(idx) {
       squares[i].innerHTML = '<img id="temp" src="./assets/ice-cream.png">'
       turnAudio.play()
       
-    } else {
+    } 
+    else {
       squares[i].style.backgroundColor = "#fff"
     }
   }
