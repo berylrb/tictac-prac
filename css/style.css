@@ -234,8 +234,8 @@ div img {
   }
 
   .pic-button > img {
-    height: 75px;
-    width: 75px;
+    height: 9vmin;
+    width: 9vmin;
   }
 
   .pic-button:hover {
