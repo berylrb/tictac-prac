@@ -158,7 +158,7 @@ div img {
   h1 {
     /* font-family: 'Titan One', cursive; */
     font-family: 'Modak', cursive;
-    font-size: 5em;
+    font-size: 5.5em;
     margin: 10px;
     margin: 0;
     color: white;
@@ -200,6 +200,11 @@ div img {
     background-color: #ffffff;
   }
 
+  .message-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
 
   .message-div-styling {
@@ -211,7 +216,6 @@ div img {
     margin: 0 0 44px 0;
     border-radius: 25px;
     border: 2.5px solid black;
-    
   }
 
   div img {
