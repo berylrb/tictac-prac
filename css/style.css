@@ -37,12 +37,12 @@ section.board {
   grid-template-columns: repeat(3, 25vmin);
   grid-gap: 0vmin;
   /* border: 1.5px solid black; */
-  box-shadow: 0 0 0 1px black;
+  box-shadow: 0 0 0 2px black;
   border-radius: 25px;
 }
 
 .board>div {
-  border: 1.5px solid black;
+  border: 2.5px solid black;
   font-size: 8vmin;
   text-align: center;
   vertical-align: middle;
@@ -183,13 +183,13 @@ div img {
     grid-template-rows: repeat(3, 19vmin);
     grid-template-columns: repeat(3, 19vmin);
     grid-gap: 0vmin;
-    box-shadow: 0 0 0 1px black;
+    box-shadow: 0 0 0 2.5px black;
     border-radius: 25px;
 
   }
 
   .board>div {
-    border: 1.5px solid black;
+    border: 2.5px solid black;
     font-size: 8vmin;
     text-align: center;
     vertical-align: middle;
@@ -204,6 +204,7 @@ div img {
     display: flex;
     justify-content: center;
     align-items: center;
+
   }
 
 
@@ -215,7 +216,7 @@ div img {
     height: 9vmin;
     margin: 0 0 44px 0;
     border-radius: 25px;
-    border: 2.5px solid black;
+    border: 4.5px solid black;
   }
 
   div img {
